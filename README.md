@@ -16,11 +16,7 @@ By default, it can register services without any user-defined metadata. This mea
 
 You can get the latest release of Registrator via Docker Hub:
 
-	$ docker pull gliderlabs/registrator:latest
-
-You can pull the last build in `master` with the `master` tag. If you want to get a specific release, you can download the release artifact listed in [Releases](https://github.com/gliderlabs/registrator/releases) and `docker load` them:
-
-	$ curl -s https://dl.gliderlabs.com/registrator/v5.tgz | docker load
+	$ docker pull nimblestratus/rpi-registrator:latest
 
 ## Starting Registrator
 
@@ -28,7 +24,7 @@ Registrator was designed to just be run as a container. You must pass the Docker
 
 	$ docker run -d \
 		-v /var/run/docker.sock:/tmp/docker.sock \
-		-h $HOSTNAME gliderlabs/registrator <registry-uri>
+		-h $HOSTNAME nimblestratus/rpi-registrator <registry-uri>
 
 By default, when registering a service, registrator will assign the service address by attempting to resolve the current hostname. If you would like to force the service address to be a specific address, you can specify the `-ip` argument.
 
